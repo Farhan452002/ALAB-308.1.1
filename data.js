@@ -50,11 +50,21 @@ let budget
 
 function TripCalculator(speed, fuelEfficiency){
   time = Math.floor(tripTotal/speed);
-  gallons = tripTotal/fuelEfficiency;
+  gallons = Math.floor(tripTotal/fuelEfficiency);
   budget = (fuelCost*gallons)<=fuelBudget;
 }
 
 TripCalculator(speed1,fuelEfficiency1);
-document.querySelector('h3').innerHTML = `<h3>Gallons of Fuel for the Entire Trip = ${gallons}
+document.querySelector('.a').innerHTML = `<h3>Going 55 Miles per Hour<br>Gallons of Fuel for the Entire Trip = ${gallons}
+  <br> It is within our budget = ${budget}
+  <br> The trip will take ${time} hours.</h3>`;
+
+TripCalculator(speed2,fuelEfficiency2);
+document.querySelector('.b').innerHTML = `<h3>Going 60 Miles per Hour<br>Gallons of Fuel for the Entire Trip = ${gallons}
+  <br> It is within our budget = ${budget}
+  <br> The trip will take ${time} hours.</h3>`;
+
+TripCalculator(speed3,fuelEfficiency3);
+document.querySelector('.c').innerHTML = `<h3>Going 75 Miles per Hour<br>Gallons of Fuel for the Entire Trip = ${gallons}
   <br> It is within our budget = ${budget}
   <br> The trip will take ${time} hours.</h3>`;
